@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>恋愛戦闘力診断</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="10問で恋愛戦闘力を数値化。結果は一般人・武術家・戦闘民族・帝王・超戦士の5階級。">
+  <!-- AdSense（固定） -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; margin: 0; }
+    header { padding: 20px 16px; border-bottom: 1px solid #ddd; }
+    h1 { margin: 0 0 4px; font-size: 22px; }
+    main { padding: 16px; max-width: 720px; margin: 0 auto; }
+    .card { background: rgba(0,0,0,0.02); border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+    fieldset { border: none; margin: 0 0 12px; padding: 0; }
+    legend { font-weight: 600; margin-bottom: 8px; }
+    label { display: block; padding: 8px 10px; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 8px; cursor: pointer; }
+    input[type="radio"] { margin-right: 8px; }
+    .actions { display: flex; gap: 8px; }
+    button { padding: 12px 14px; border-radius: 10px; border: 1px solid #222; background: #222; color: #fff; font-weight: 600; cursor: pointer; }
+    button.secondary { background: #fff; color: #222; }
+    #result { font-size: 18px; }
+    .score { font-size: 28px; font-weight: 800; }
+    .label { font-size: 20px; font-weight: 700; }
+    .notice { font-size: 12px; color: #666; }
+    .share { display: flex; gap: 8px; margin-top: 8px; }
+    .ad { width: 100%; min-height: 90px; margin: 12px 0; }
+    .result-image { width:100%; max-width:320px; border-radius:12px; margin:12px auto; display:block; object-fit:cover; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>恋愛戦闘力診断</h1>
+    <div class="notice">10問に答えると戦闘力を0〜600,000で表示。階級は「一般人・武術家・戦闘民族・帝王・超戦士」。</div>
+  </header>
+
+  <main>
+    <form id="quiz" class="card">
+      <fieldset>
+        <legend>Q1. 気になる人にLINEする時、先に送る？</legend>
+        <label><input type="radio" name="q1" value="A">すぐ送る</label>
+        <label><input type="radio" name="q1" value="B">相手から来るまで待つ</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Q2. デートの予定は？</legend>
+        <label><input type="radio" name="q2" value="A">自分で決めたい</label>
+        <label><input type="radio" name="q2" value="B">相手に合わせたい</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Q3. 恋人が異性と食事に行くと？</legend>
+        <label><input type="radio" name="q3" value="A">気にしない</label>
+        <label><input type="radio" name="q3" value="B">モヤモヤする</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Q4. 付き合う前の告白は？</legend>
+        <label><input type="radio" name="q4" value="A">自分からしたい</label>
+        <label><input type="radio" name="q4" value="B">相手にしてほしい</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Q5. 連絡の頻度は？</legend>
+        <label><input type="radio" name="q5" value="A">毎日したい</label>
+        <label><input type="radio" name="q5" value="B">気が向いた時でいい</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Q6. ケンカになったら？</legend>
+        <label><input type="radio" name="q6" value="A">自分から謝る</label>
+        <label><input type="radio" name="q6" value="B">相手が落ち着くまで放置</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Q7. 理想の恋人像は？</legend>
+        <label><input type="radio" name="q7" value="A">一緒に何かを頑張れる人</label>
+        <label><input type="radio" name="q7" value="B">癒してくれる人</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Q8. サプライズは？</legend>
+        <label><input type="radio" name="q8" value="A">大好き</label>
+        <label><input type="radio" name="q8" value="B">苦手</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Q9. 恋愛と仕事（学業）、どっちを優先？</legend>
+        <label><input type="radio" name="q9" value="A">恋愛</label>
+        <label><input type="radio" name="q9" value="B">仕事（学業）</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Q10. 元恋人のSNS、見てしまう？</legend>
+        <label><input type="radio" name="q10" value="A">見る</label>
+        <label><input type="radio" name="q10" value="B">見ない</label>
+      </fieldset>
+
+      <div class="actions">
+        <button type="button" onclick="show()">診断する</button>
+        <button type="reset" class="secondary">リセット</button>
+      </div>
+    </form>
+
+    <section id="output" class="card" style="display:none;">
+      <div id="result">
+        <div class="score" id="scoreText"></div>
+        <div class="label" id="labelText"></div>
+        <img id="resultImage" class="result-image" alt="" style="display:none;">
+        <p id="adviceText"></p>
+      </div>
+
+      <!-- 広告ユニット（承認後に表示）。IDは自分のに置換 -->
+      <div class="ad">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
+             data-ad-slot="YYYYYYYYYY"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+      </div>
+
+      <div class="share">
+        <button type="button" onclick="share()">結果をシェア</button>
+        <button type="button" class="secondary" onclick="copyResult()">結果をコピー</button>
+      </div>
+    </section>
+
+    <!-- 任意：記事下など別位置にも広告を置ける -->
+    <section class="card">
+      <details>
+        <summary>この診断について</summary>
+        <div class="notice">
+          戦闘力は回答の合計点を0〜600,000へ換算。階級しきい値は固定。個人情報は保存しない。
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <script>
+  // 点数設計：攻め=2点、慎重=0点。Q3/Q6は逆転。
+  const weights = {
+    q1:{A:2,B:0}, q2:{A:2,B:0}, q3:{A:0,B:2}, q4:{A:2,B:0}, q5:{A:2,B:0},
+    q6:{A:0,B:2}, q7:{A:2,B:0}, q8:{A:2,B:0}, q9:{A:2,B:0}, q10:{A:2,B:0}
+  };
+
+  // ラベル→画像
+  const resultImages = {
+    '一般人': '/img/general.png',
+    '武術家': '/img/martial.png',
+    '戦闘民族': '/img/warrior.png',
+    '帝王': '/img/emperor.png',
+    '超戦士': '/img/legend.png'
+  };
+
+  function calc(form){
+    let raw = 0;
+    const fd = new FormData(form);
+    for(let i=1;i<=10;i++){
+      const key='q'+i;
+      const v = fd.get(key);
+      if(!v) return null;
+      raw += (weights[key][v]||0);
+    }
+    const power = Math.round((raw / 20) * 600000);
+
+    let label = '';
+    if      (power < 100000) label = '一般人';
+    else if (power < 250000) label = '武術家';
+    else if (power < 400000) label = '戦闘民族';
+    else if (power <= 530000) label = '帝王';
+    else label = '超戦士';
+
+    let advice = '';
+    switch(label){
+      case '一般人': advice='慎重で安定志向。小さな一歩を増やすと好転しやすい。'; break;
+      case '武術家': advice='基礎力が高い。主導の回数を少し増やすと成果が伸びる。'; break;
+      case '戦闘民族': advice='情熱と行動力が武器。相手のペース配慮で成功率が上がる。'; break;
+      case '帝王': advice='強い魅力とカリスマ。独りよがりを避けると安定。'; break;
+      case '超戦士': advice='常識外の突破力。丁寧な対話で長期安定を狙える。'; break;
+    }
+
+    return { raw, power, label, advice };
+  }
+
+  function show(){
+    const form = document.getElementById('quiz');
+    const r = calc(form);
+    const out = document.getElementById('output');
+    const imgEl = document.getElementById('resultImage');
+
+    if(!r){
+      out.style.display='block';
+      document.getElementById('scoreText').textContent = '未回答があります。すべて選択してください。';
+      document.getElementById('labelText').textContent = '';
+      document.getElementById('adviceText').textContent = '';
+      imgEl.style.display='none';
+      imgEl.removeAttribute('src');
+      imgEl.removeAttribute('alt');
+      return;
+    }
+
+    document.getElementById('scoreText').textContent = `戦闘力：${r.power.toLocaleString()}`;
+    document.getElementById('labelText').textContent = `階級：${r.label}`;
+    document.getElementById('adviceText').textContent = r.advice;
+    out.style.display='block';
+
+    const src = resultImages[r.label];
+    if(src){
+      imgEl.src = src;
+      imgEl.alt = `${r.label} のイメージ`;
+      imgEl.loading = 'lazy';
+      imgEl.referrerPolicy = 'no-referrer';
+      imgEl.style.display='block';
+    } else {
+      imgEl.style.display='none';
+      imgEl.removeAttribute('src');
+      imgEl.removeAttribute('alt');
+    }
+
+    // 結果表示のたびに広告を再リクエスト（表示安定化）
+    try { (adsbygoogle=window.adsbygoogle||[]).push({}); } catch(e) {}
+  }
+
+  async function share(){
+    const score = document.getElementById('scoreText').textContent || '';
+    const label = document.getElementById('labelText').textContent || '';
+    const text = `${score}／${label}｜恋愛戦闘力診断`;
+    const url = location.href;
+    if (navigator.share) {
+      try { await navigator.share({ title: '恋愛戦闘力診断', text, url }); } catch(e){}
+    } else {
+      await navigator.clipboard.writeText(`${text}\n${url}`);
+      alert('結果をコピーしました。SNSに貼り付けてください。');
+    }
+  }
+
+  async function copyResult(){
+    const score = document.getElementById('scoreText').textContent || '';
+    const label = document.getElementById('labelText').textContent || '';
+    const text = `${score}／${label}｜恋愛戦闘力診断\n${location.href}`;
+    await navigator.clipboard.writeText(text);
+    alert('結果をコピーしました。');
+  }
+  </script>
+</body>
+</html>
