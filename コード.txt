@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="10問で恋愛戦闘力を数値化。結果は一般人・武術家・戦闘民族・帝王・超戦士の5階級。">
   <!-- AdSense（固定） -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ko829ma429ri515n93-gif" crossorigin="anonymous"></script>
   <style>
     :root { color-scheme: light dark; }
     body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; margin: 0; }
@@ -248,3 +248,4 @@
   </script>
 </body>
 </html>
+
