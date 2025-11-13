@@ -149,11 +149,11 @@
 
   // ラベル→画像
   const resultImages = {
-    '一般人': '/img/general.png',
-    '武術家': '/img/martial.png',
-    '戦闘民族': '/img/warrior.png',
-    '帝王': '/img/emperor.png',
-    '超戦士': '/img/legend.png'
+    '一般人': '/img/一般人.png',
+    '武術家': '/img/武術家.png',
+    '戦闘民族': '/img/戦闘民族.png',
+    '帝王': '/img/帝王.png',
+    '超戦士': '/img/覚醒.png'
   };
 
   function calc(form){
@@ -248,4 +248,5 @@
   </script>
 </body>
 </html>
+
 
